@@ -25,6 +25,10 @@
     @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2.5 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
   
+  .btn-primary-enhanced {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-medium py-2.5 px-6 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center;
+  }
+  
   .btn-secondary {
     @apply bg-white hover:bg-gray-50 text-gray-700 font-medium py-2.5 px-6 rounded-lg border border-gray-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
@@ -35,6 +39,15 @@
   
   .section-subtitle {
     @apply text-gray-600 text-lg mb-8;
+  }
+
+  /* Navigation Styles */
+  .nav-link {
+    @apply flex items-center text-gray-600 hover:text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-primary-50;
+  }
+  
+  .nav-link-active {
+    @apply text-primary-600 bg-primary-50;
   }
 
   /* Category Section Unique Styles */

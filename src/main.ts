@@ -5,27 +5,149 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 
 app.innerHTML = `
   <!-- Navigation -->
-  <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+  <nav class="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-20">
         <div class="flex items-center">
-          <div class="flex-shrink-0">
-            <h1 class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">MarketHub</h1>
+          <div class="flex-shrink-0 group">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h1 class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">MarketHub</h1>
+            </div>
           </div>
-          <div class="hidden md:block ml-10">
-            <div class="flex items-baseline space-x-4">
-              <a href="#" class="text-gray-900 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-              <a href="#" class="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Classified</a>
-              <a href="#" class="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Shop</a>
-              <a href="#" class="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Auctions</a>
-              <a href="#" class="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Companies</a>
-              <a href="#" class="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Jobs</a>
+          <div class="hidden lg:block ml-12">
+            <div class="flex items-baseline space-x-1">
+              <a href="#" class="nav-link nav-link-active">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Home
+              </a>
+              <a href="#" class="nav-link">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                </svg>
+                Classified
+              </a>
+              <a href="#" class="nav-link">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+                Shop
+              </a>
+              <a href="#" class="nav-link">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+                Auctions
+              </a>
+              <a href="#" class="nav-link">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+                Companies
+              </a>
+              <a href="#" class="nav-link">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m8 6V8a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2z"></path>
+                </svg>
+                Jobs
+              </a>
             </div>
           </div>
         </div>
+        
+        <!-- Right side actions -->
         <div class="flex items-center space-x-4">
-          <button class="btn-secondary">Sign In</button>
-          <button class="btn-primary">Post Ad</button>
+          <!-- Search Icon (Mobile) -->
+          <button class="lg:hidden p-2 text-gray-500 hover:text-primary-600 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+          
+          <!-- Notifications -->
+          <button class="relative p-2 text-gray-500 hover:text-primary-600 transition-colors group">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM10.5 3.5a6 6 0 0 1 9 9l-9-9zM13.5 13.5a6 6 0 0 1-9-9l9 9z"></path>
+            </svg>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+            <div class="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+              <div class="p-3 text-sm text-gray-600">
+                <div class="font-medium mb-1">New notifications</div>
+                <div class="text-xs text-gray-500">You have 3 new messages</div>
+              </div>
+            </div>
+          </button>
+          
+          <!-- User Menu -->
+          <div class="relative group">
+            <button class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+              </div>
+              <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            
+            <!-- Dropdown Menu -->
+            <div class="absolute top-full right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+              <div class="p-4 border-b border-gray-100">
+                <div class="font-medium text-gray-900">John Doe</div>
+                <div class="text-sm text-gray-500">john@example.com</div>
+              </div>
+              <div class="py-2">
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                  <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  Profile
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                  <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  My Listings
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                  <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                  Settings
+                </a>
+                <div class="border-t border-gray-100 my-2"></div>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
+                  <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                  </svg>
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Post Ad Button -->
+          <button class="btn-primary-enhanced hidden sm:flex">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Post Ad
+          </button>
+          
+          <!-- Mobile Menu Button -->
+          <button class="lg:hidden p-2 text-gray-500 hover:text-primary-600 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -743,171 +865,139 @@ app.innerHTML = `
   </footer>
 `
 
-// Initialize animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Intersection Observer for category animations
-  const observerOptions = {
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions: IntersectionObserverInit = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('category-animate-in');
-        entry.target.style.opacity = '1';
+        const target = entry.target as HTMLElement;
+        target.classList.add('category-animate-in');
+        target.style.opacity = '1';
       }
     });
   }, observerOptions);
 
-  // Observe category items
-  const categoryItems = document.querySelectorAll('.category-animate-in');
-  categoryItems.forEach(item => {
-    observer.observe(item);
-  });
+  document.querySelectorAll<HTMLElement>('.category-animate-in, .category-title-animate').forEach((el) => observer.observe(el));
 
-  // Observe title animation
-  const titleElements = document.querySelectorAll('.category-title-animate');
-  titleElements.forEach(element => {
-    observer.observe(element);
-  });
-
-  // Add hover effects for category items
-  const categoryCards = document.querySelectorAll('[class*="category-"]');
-  categoryCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'scale(1.05)';
+  document.querySelectorAll<HTMLElement>('[class*="category-"]').forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'scale(1.05)';
     });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = 'scale(1)';
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'scale(1)';
     });
   });
 
-  // Smooth scrolling for navigation links
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+  document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector<HTMLElement>(targetId!);
       if (targetSection) {
         targetSection.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
+          block: 'start',
         });
       }
     });
   });
 
-  // Add click handlers for filter tabs
-  const filterTabs = document.querySelectorAll('section button');
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      // Remove active class from siblings
-      const siblings = this.parentElement.querySelectorAll('button');
-      siblings.forEach(sibling => {
+  document.querySelectorAll<HTMLButtonElement>('section button').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const parent = tab.parentElement;
+      if (!parent) return;
+
+      const siblings = parent.querySelectorAll<HTMLButtonElement>('button');
+      siblings.forEach((sibling) => {
         sibling.classList.remove('bg-primary-600', 'text-white');
         sibling.classList.add('bg-gray-100', 'text-gray-700');
       });
-      
-      // Add active class to clicked tab
-      this.classList.remove('bg-gray-100', 'text-gray-700');
-      this.classList.add('bg-primary-600', 'text-white');
+
+      tab.classList.remove('bg-gray-100', 'text-gray-700');
+      tab.classList.add('bg-primary-600', 'text-white');
     });
   });
 
-  // Add parallax effect to background elements
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.absolute');
-    
+    const parallaxElements = document.querySelectorAll<HTMLElement>('.absolute');
+
     parallaxElements.forEach((element, index) => {
-      const speed = 0.5 + (index * 0.1);
+      const speed = 0.5 + index * 0.1;
       const yPos = -(scrolled * speed);
       element.style.transform = `translateY(${yPos}px)`;
     });
   });
 
-  // Add loading animation for images
-  const images = document.querySelectorAll('img');
-  images.forEach(img => {
-    img.addEventListener('load', function() {
-      this.style.opacity = '1';
-      this.style.transform = 'scale(1)';
+  document.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
+    img.addEventListener('load', () => {
+      img.style.opacity = '1';
+      img.style.transform = 'scale(1)';
     });
-    
-    // Set initial state
     img.style.opacity = '0';
     img.style.transform = 'scale(0.95)';
     img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
   });
 
-  // Add search functionality
-  const searchInput = document.querySelector('input[placeholder="What are you looking for?"]');
-  const searchButton = document.querySelector('button:has(svg)');
-  
+  const searchInput = document.querySelector<HTMLInputElement>('input[placeholder="What are you looking for?"]');
+  const searchButton = document.querySelector<HTMLButtonElement>('button');
+
   if (searchInput && searchButton) {
-    searchButton.addEventListener('click', function(e) {
+    searchButton.addEventListener('click', (e) => {
       e.preventDefault();
       const searchTerm = searchInput.value.trim();
       if (searchTerm) {
         console.log('Searching for:', searchTerm);
-        // Add search animation
-        this.style.transform = 'scale(0.95)';
+        searchButton.style.transform = 'scale(0.95)';
         setTimeout(() => {
-          this.style.transform = 'scale(1)';
+          searchButton.style.transform = 'scale(1)';
         }, 150);
       }
     });
 
-    searchInput.addEventListener('keypress', function(e) {
+    searchInput.addEventListener('keypress', (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
         searchButton.click();
       }
     });
   }
 
-  // Add card hover effects
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-5px)';
-      this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+  document.querySelectorAll<HTMLElement>('.card').forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-5px)';
+      card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
     });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-      this.style.boxShadow = '';
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+      card.style.boxShadow = '';
     });
   });
 
-  // Add button click animations
-  const buttons = document.querySelectorAll('button');
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      this.style.transform = 'scale(0.95)';
+  document.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
+    button.addEventListener('click', () => {
+      button.style.transform = 'scale(0.95)';
       setTimeout(() => {
-        this.style.transform = 'scale(1)';
+        button.style.transform = 'scale(1)';
       }, 150);
     });
   });
 });
 
-// Add resize handler for responsive adjustments
-window.addEventListener('resize', function() {
-  // Adjust animations based on screen size
+window.addEventListener('resize', () => {
+  // @ts-ignore
   const isMobile = window.innerWidth < 768;
-  const categoryItems = document.querySelectorAll('.category-animate-in');
-  
+  const categoryItems = document.querySelectorAll<HTMLElement>('.category-animate-in');
+
   categoryItems.forEach((item, index) => {
-    if (isMobile) {
-      item.style.animationDelay = `${index * 0.1}s`;
-    } else {
-      item.style.animationDelay = `${index * 0.1}s`;
-    }
+    item.style.animationDelay = `${index * 0.1}s`;
   });
 });
+
 
 // Export for potential module usage
 export {};
