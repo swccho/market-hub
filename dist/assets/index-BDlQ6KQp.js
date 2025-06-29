@@ -1,4 +1,4 @@
-(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const s of e.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function a(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function o(t){if(t.ep)return;t.ep=!0;const e=a(t);fetch(t.href,e)}})();const d=document.querySelector("#app");d.innerHTML=`
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function o(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();const d=document.querySelector("#app");d.innerHTML=`
   <!-- Navigation -->
   <nav class="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -180,7 +180,7 @@
               </select>
             </div>
             <div>
-              <button class="w-full btn-primary">
+              <button class="w-full btn-primary flex items-center justify-center">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
@@ -213,137 +213,85 @@
     </div>
   </section>
 
-  <!-- Browse by Category Section - UNIQUE DESIGN -->
-  <section class="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 relative overflow-hidden">
-    <!-- Animated Background Elements -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 left-10 w-32 h-32 bg-primary-500 rounded-full opacity-10 animate-pulse"></div>
-      <div class="absolute top-40 right-20 w-24 h-24 bg-secondary-500 rounded-full opacity-10 animate-pulse" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-20 left-1/4 w-40 h-40 bg-accent-500 rounded-full opacity-10 animate-pulse" style="animation-delay: 2s;"></div>
-      <div class="absolute bottom-40 right-1/3 w-28 h-28 bg-pink-500 rounded-full opacity-10 animate-pulse" style="animation-delay: 0.5s;"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 category-title-animate">
-          Explore by 
-          <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Category</span>
-        </h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto category-title-animate" style="animation-delay: 0.2s;">
-          Discover amazing opportunities across all our specialized sections
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-        <!-- Classified Ads - Morphing Card -->
-        <div class="category-animate-in opacity-0">
-          <div class="category-morphing h-64 p-8 flex flex-col items-center justify-center text-center group cursor-pointer">
-            <div class="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+     <!-- Categories Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Explore Categories</h2>
+          <p class="section-subtitle">Discover what you're looking for</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <!-- Classified Ads -->
+          <div class="category-item group">
+            <div class="category-icon-small bg-gradient-to-br from-blue-500 to-blue-600">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15"></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Classified Ads</h3>
-            <p class="text-gray-200 text-sm">Buy, sell, and trade with confidence</p>
-            <div class="mt-4 text-cyan-300 font-semibold">2,450+ listings</div>
+            <h3 class="category-title-small">Classified Ads</h3>
           </div>
-        </div>
 
-        <!-- Shop - Floating Hexagon -->
-        <div class="category-animate-in opacity-0">
-          <div class="relative h-64 flex items-center justify-center category-floating">
-            <div class="category-hexagon bg-gradient-to-br from-green-400 to-blue-500 cursor-pointer group">
-              <div class="category-hexagon-inner text-center text-white">
-                <svg class="w-12 h-12 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                </svg>
-                <h3 class="text-lg font-bold">Shop</h3>
-                <p class="text-xs opacity-90">Premium products</p>
-              </div>
+          <!-- Shop -->
+          <div class="category-item group">
+            <div class="category-icon-small bg-gradient-to-br from-emerald-500 to-emerald-600">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+              </svg>
             </div>
-            <div class="category-pulse-ring"></div>
-            <div class="category-pulse-ring"></div>
-            <div class="category-pulse-ring"></div>
+            <h3 class="category-title-small">Shop</h3>
           </div>
-        </div>
 
-        <!-- Auctions - Floating Hexagon Style -->
-        <div class="category-animate-in opacity-0">
-          <div class="relative h-64 flex items-center justify-center category-floating">
-            <div class="category-hexagon bg-gradient-to-br from-red-500 to-yellow-500 cursor-pointer group">
-              <div class="category-hexagon-inner text-center text-white">
-                <svg class="w-12 h-12 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                </svg>
-                <h3 class="text-lg font-bold">Auctions</h3>
-                <p class="text-xs opacity-90">Bid & Win</p>
-              </div>
+          <!-- Auctions -->
+          <div class="category-item group">
+            <div class="category-icon-small bg-gradient-to-br from-red-500 to-red-600">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+              </svg>
             </div>
-            <div class="category-pulse-ring-auction"></div>
-            <div class="category-pulse-ring-auction"></div>
-            <div class="category-pulse-ring-auction"></div>
+            <h3 class="category-title-small">Auctions</h3>
           </div>
-        </div>
 
-        <!-- Offers - Blob Shape -->
-        <div class="category-animate-in opacity-0">
-          <div class="h-64 flex items-center justify-center">
-            <div class="category-blob w-48 h-48 flex items-center justify-center cursor-pointer group">
-              <div class="text-center text-white">
-                <svg class="w-16 h-16 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                </svg>
-                <h3 class="text-2xl font-bold">Offers</h3>
-                <p class="text-sm opacity-90">Special deals daily</p>
-                <div class="mt-2 text-yellow-300 font-semibold">Hot deals!</div>
-              </div>
+          <!-- Special Offers -->
+          <div class="category-item group">
+            <div class="category-icon-small bg-gradient-to-br from-purple-500 to-purple-600">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+              </svg>
             </div>
+            <h3 class="category-title-small">Special Offers</h3>
           </div>
-        </div>
 
-        <!-- Companies - Neon Effect -->
-        <div class="category-animate-in opacity-0">
-          <div class="category-neon h-64 rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer group">
-            <div class="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-16 h-16 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Company Directory -->
+          <div class="category-item group">
+            <div class="category-icon-small bg-gradient-to-br from-indigo-500 to-indigo-600">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-cyan-400 mb-2">Companies</h3>
-            <p class="text-gray-300 text-sm">Connect with businesses</p>
-            <div class="mt-4 text-purple-400 font-semibold">850+ verified</div>
+            <h3 class="category-title-small">Companies</h3>
           </div>
-        </div>
 
-        <!-- Jobs - Animated Gradient -->
-        <div class="category-animate-in opacity-0">
-          <div class="h-64 bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center cursor-pointer group transform hover:scale-105 transition-all duration-500 hover:shadow-2xl">
-            <div class="mb-4 transform group-hover:rotate-12 transition-transform duration-300">
-              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m8 6V8a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2z"></path>
+          <!-- Job Videos -->
+          <div class="category-item group">
+            <div class="category-icon-small bg-gradient-to-br from-orange-500 to-orange-600">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Job Videos</h3>
-            <p class="text-white text-sm opacity-90">Visual job opportunities</p>
-            <div class="mt-4 bg-white bg-opacity-20 px-4 py-2 rounded-full">
-              <span class="text-white font-semibold text-sm">New format!</span>
-            </div>
+            <h3 class="category-title-small">Job Videos</h3>
           </div>
         </div>
+        
+        <!-- More Categories Button -->
+        <div class="text-center mt-8">
+        <button class="mx-auto btn-primary flex items-center justify-center">
+                More Categories
+              </button>
+        </div>
       </div>
-
-      <!-- Call to Action -->
-      <div class="text-center mt-16">
-        <button class="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-          Explore All Categories
-          <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
+    </section>
+    
   <!-- Latest Listings Section -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -366,12 +314,6 @@
         <div class="card card-featured group cursor-pointer">
           <div class="relative">
             <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Luxury Car" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 left-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">FEATURED</div>
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white p-2 rounded-full">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"></path>
-              </svg>
-            </div>
           </div>
           <div class="p-4">
             <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">Luxury BMW X5 2023</h3>
@@ -387,11 +329,6 @@
         <div class="card group cursor-pointer">
           <div class="relative">
             <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Smartphone" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white p-2 rounded-full">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"></path>
-              </svg>
-            </div>
           </div>
           <div class="p-4">
             <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">iPhone 15 Pro Max</h3>
@@ -406,11 +343,6 @@
         <div class="card group cursor-pointer">
           <div class="relative">
             <img src="https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Laptop" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white p-2 rounded-full">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"></path>
-              </svg>
-            </div>
           </div>
           <div class="p-4">
             <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">MacBook Pro 16"</h3>
@@ -425,11 +357,6 @@
         <div class="card group cursor-pointer">
           <div class="relative">
             <img src="https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Watch" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white p-2 rounded-full">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"></path>
-              </svg>
-            </div>
           </div>
           <div class="p-4">
             <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">Apple Watch Series 9</h3>
@@ -543,8 +470,7 @@
         <div class="card group cursor-pointer border-2 border-red-200 bg-red-50">
           <div class="relative">
             <img src="https://images.pexels.com/photos/1649762/pexels-photo-1649762.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Auction Item" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">LIVE</div>
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">2h 15m left</div>
+           
           </div>
           <div class="p-4">
             <h3 class="font-semibold mb-2 group-hover:text-primary-600 transition-colors">Vintage Camera Collection</h3>
@@ -580,7 +506,6 @@
         <div class="card group cursor-pointer">
           <div class="relative">
             <img src="https://images.pexels.com/photos/1649758/pexels-photo-1649758.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Auction Item" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">1d 3h left</div>
           </div>
           <div class="p-4">
             <h3 class="font-semibold mb-2 group-hover:text-primary-600 transition-colors">Rare Art Piece</h3>
@@ -858,4 +783,4 @@
       </div>
     </div>
   </footer>
-`;document.addEventListener("DOMContentLoaded",()=>{const l={threshold:.1,rootMargin:"0px 0px -50px 0px"},r=new IntersectionObserver(t=>{t.forEach(e=>{if(e.isIntersecting){const s=e.target;s.classList.add("category-animate-in"),s.style.opacity="1"}})},l);document.querySelectorAll(".category-animate-in, .category-title-animate").forEach(t=>r.observe(t)),document.querySelectorAll('[class*="category-"]').forEach(t=>{t.addEventListener("mouseenter",()=>{t.style.transform="scale(1.05)"}),t.addEventListener("mouseleave",()=>{t.style.transform="scale(1)"})}),document.querySelectorAll('nav a[href^="#"]').forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const s=t.getAttribute("href"),i=document.querySelector(s);i&&i.scrollIntoView({behavior:"smooth",block:"start"})})}),document.querySelectorAll("section button").forEach(t=>{t.addEventListener("click",()=>{const e=t.parentElement;if(!e)return;e.querySelectorAll("button").forEach(i=>{i.classList.remove("bg-primary-600","text-white"),i.classList.add("bg-gray-100","text-gray-700")}),t.classList.remove("bg-gray-100","text-gray-700"),t.classList.add("bg-primary-600","text-white")})}),window.addEventListener("scroll",()=>{const t=window.pageYOffset;document.querySelectorAll(".absolute").forEach((s,i)=>{const n=.5+i*.1,c=-(t*n);s.style.transform=`translateY(${c}px)`})}),document.querySelectorAll("img").forEach(t=>{t.addEventListener("load",()=>{t.style.opacity="1",t.style.transform="scale(1)"}),t.style.opacity="0",t.style.transform="scale(0.95)",t.style.transition="opacity 0.3s ease, transform 0.3s ease"});const a=document.querySelector('input[placeholder="What are you looking for?"]'),o=document.querySelector("button");a&&o&&(o.addEventListener("click",t=>{t.preventDefault();const e=a.value.trim();e&&(console.log("Searching for:",e),o.style.transform="scale(0.95)",setTimeout(()=>{o.style.transform="scale(1)"},150))}),a.addEventListener("keypress",t=>{t.key==="Enter"&&o.click()})),document.querySelectorAll(".card").forEach(t=>{t.addEventListener("mouseenter",()=>{t.style.transform="translateY(-5px)",t.style.boxShadow="0 20px 40px rgba(0,0,0,0.1)"}),t.addEventListener("mouseleave",()=>{t.style.transform="translateY(0)",t.style.boxShadow=""})}),document.querySelectorAll("button").forEach(t=>{t.addEventListener("click",()=>{t.style.transform="scale(0.95)",setTimeout(()=>{t.style.transform="scale(1)"},150)})})});window.addEventListener("resize",()=>{document.querySelectorAll(".category-animate-in").forEach((r,a)=>{r.style.animationDelay=`${a*.1}s`})});
+`;document.addEventListener("DOMContentLoaded",()=>{const l={threshold:.1,rootMargin:"0px 0px -50px 0px"},r=new IntersectionObserver(e=>{e.forEach(t=>{if(t.isIntersecting){const s=t.target;s.classList.add("category-animate-in"),s.style.opacity="1"}})},l);document.querySelectorAll(".category-animate-in, .category-title-animate").forEach(e=>r.observe(e)),document.querySelectorAll('[class*="category-"]').forEach(e=>{e.addEventListener("mouseenter",()=>{e.style.transform="scale(1.05)"}),e.addEventListener("mouseleave",()=>{e.style.transform="scale(1)"})}),document.querySelectorAll('nav a[href^="#"]').forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const s=e.getAttribute("href"),a=document.querySelector(s);a&&a.scrollIntoView({behavior:"smooth",block:"start"})})}),document.querySelectorAll("section button").forEach(e=>{e.addEventListener("click",()=>{const t=e.parentElement;if(!t)return;t.querySelectorAll("button").forEach(a=>{a.classList.remove("bg-primary-600","text-white"),a.classList.add("bg-gray-100","text-gray-700")}),e.classList.remove("bg-gray-100","text-gray-700"),e.classList.add("bg-primary-600","text-white")})}),window.addEventListener("scroll",()=>{const e=window.pageYOffset;document.querySelectorAll(".absolute").forEach((s,a)=>{const n=.5+a*.1,c=-(e*n);s.style.transform=`translateY(${c}px)`})}),document.querySelectorAll("img").forEach(e=>{e.addEventListener("load",()=>{e.style.opacity="1",e.style.transform="scale(1)"}),e.style.opacity="0",e.style.transform="scale(0.95)",e.style.transition="opacity 0.3s ease, transform 0.3s ease"});const i=document.querySelector('input[placeholder="What are you looking for?"]'),o=document.querySelector("button");i&&o&&(o.addEventListener("click",e=>{e.preventDefault();const t=i.value.trim();t&&(console.log("Searching for:",t),o.style.transform="scale(0.95)",setTimeout(()=>{o.style.transform="scale(1)"},150))}),i.addEventListener("keypress",e=>{e.key==="Enter"&&o.click()})),document.querySelectorAll(".card").forEach(e=>{e.addEventListener("mouseenter",()=>{e.style.transform="translateY(-5px)",e.style.boxShadow="0 20px 40px rgba(0,0,0,0.1)"}),e.addEventListener("mouseleave",()=>{e.style.transform="translateY(0)",e.style.boxShadow=""})}),document.querySelectorAll("button").forEach(e=>{e.addEventListener("click",()=>{e.style.transform="scale(0.95)",setTimeout(()=>{e.style.transform="scale(1)"},150)})})});window.addEventListener("resize",()=>{document.querySelectorAll(".category-animate-in").forEach((r,i)=>{r.style.animationDelay=`${i*.1}s`})});
