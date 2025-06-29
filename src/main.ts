@@ -493,7 +493,6 @@ app.innerHTML = `
         <div class="card group cursor-pointer">
           <div class="relative">
             <img src="https://images.pexels.com/photos/1649760/pexels-photo-1649760.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Auction Item" class="w-full h-48 object-cover rounded-t-xl">
-            <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">5h 42m left</div>
           </div>
           <div class="p-4">
             <h3 class="font-semibold mb-2 group-hover:text-primary-600 transition-colors">Antique Furniture Set</h3>
